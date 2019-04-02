@@ -613,13 +613,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 227610435}
-  m_LocalRotation: {x: 0.14888126, y: 0.04623001, z: 0.033964798, w: 0.98718977}
-  m_LocalPosition: {x: 1.4, y: 9.39, z: -54.49}
+  m_LocalRotation: {x: 0.26090148, y: 0.52589023, z: -0.2628828, w: 0.7656778}
+  m_LocalPosition: {x: -2.2, y: 7.27, z: -46.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 16.906, y: 6.083, z: 4.846}
+  m_LocalEulerAnglesHint: {x: 42.534, y: 65.05801, z: -10.016001}
 --- !u!82 &227610441
 AudioSource:
   m_ObjectHideFlags: 0
