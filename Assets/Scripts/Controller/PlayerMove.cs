@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour {
     private bool isMoving;
     private Transform m_transform;
     private bool isGround = true;
-    private float jumpSpeed = 300;
+    private float jumpSpeed = 100;
 
     // Use this for initialization
     void Start () {
@@ -25,10 +25,15 @@ public class PlayerMove : MonoBehaviour {
         m_transform = transform;
 
     }
-	
-	// Update is called once per frame
-	void FixedUpdate() {
-       
+
+    // Update is called once per frame
+
+    private void Update()
+    {
+        ControllMove();
+    }
+    void FixedUpdate() {
+
         if (isMoving && (vertical != 0 || horizonta != 0))
         {
             //Rotation(v, h);
@@ -48,12 +53,7 @@ public class PlayerMove : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space)){
             PlayerJump();
         }
-        if(m_transform.position.y - startJumpY>=limitDetalY){
-            //m_transform.position = new Vector3(m_transform.position.x, startJumpY + limitDetalY, m_transform.position.z) ;
-            isJump = true;
-        }else {
-            isJump = false;
-        }
+
     }
     // 碰撞开始
     private bool isJump = false;
@@ -78,7 +78,7 @@ public class PlayerMove : MonoBehaviour {
         //startJumpY = m_transform.position.y;
         if(!isJump){
             M_rigidbody.AddForce(Vector3.up*jumpSpeed);
-            //isJump = true;
+            isJump = true;
         }
         //Debug.Log("PlayerJump*******"+(Vector3.up*jumpSpeed));
     }
@@ -93,5 +93,37 @@ public class PlayerMove : MonoBehaviour {
         Quaternion newRotation = Quaternion.Lerp(M_rigidbody.rotation, targetRotation, turn_speed * Time.deltaTime);
         transform.rotation = newRotation;
      
+    }
+
+    private void ControllMove(){
+        vertical = 0;
+        horizonta = 0;
+        if (Input.GetKey(KeyCode.W)){
+            isMoving = true;
+            //playerMove(0,1);
+            vertical = 1;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            isMoving = true;
+            //playerMove(-1, 0);
+            horizonta = -1;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            isMoving = true;
+            //playerMove(0, -1);
+            vertical = -1;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            isMoving = true;
+            //playerMove(1, 0);
+            horizonta = 1;
+        }
+        playerMove(horizonta,vertical);
+        if(Input.GetKeyUp(KeyCode.W)|| Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.S)|| Input.GetKeyUp(KeyCode.D)){
+            isMoving = false;
+        }
     }
 }
