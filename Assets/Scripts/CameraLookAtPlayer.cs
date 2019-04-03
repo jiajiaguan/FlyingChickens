@@ -17,7 +17,11 @@ public class CameraLookAtPlayer : MonoBehaviour
     void Update()
     {
         //计算出相机跟随的位置
+<<<<<<< HEAD
         Vector3 targetCamPos = new Vector3(target.position.x+offset.x,transform.position.y,target.position.z+offset.z);//target.position + offset;
+=======
+        Vector3 targetCamPos = target.position + offset;
+>>>>>>> 224a66dda3027d2e85a19a713760609e928a592c
         //设置相机的位置,这里用到了Vector3.Lerp,是一个差值计算,使得移动更柔和.但是会略微消耗计算量
         //由于主摄像机只有1个,所以可以忽略这个计算量的消耗
         transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);

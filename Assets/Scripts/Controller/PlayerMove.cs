@@ -15,7 +15,11 @@ public class PlayerMove : MonoBehaviour {
     private bool isMoving;
     private Transform m_transform;
     private bool isGround = true;
+<<<<<<< HEAD
     private float jumpSpeed = 100;
+=======
+    private float jumpSpeed = 300;
+>>>>>>> 224a66dda3027d2e85a19a713760609e928a592c
 
     // Use this for initialization
     void Start () {
@@ -25,6 +29,7 @@ public class PlayerMove : MonoBehaviour {
         m_transform = transform;
 
     }
+<<<<<<< HEAD
 
     // Update is called once per frame
 
@@ -34,6 +39,12 @@ public class PlayerMove : MonoBehaviour {
     }
     void FixedUpdate() {
 
+=======
+	
+	// Update is called once per frame
+	void FixedUpdate() {
+       
+>>>>>>> 224a66dda3027d2e85a19a713760609e928a592c
         if (isMoving && (vertical != 0 || horizonta != 0))
         {
             //Rotation(v, h);
@@ -53,7 +64,16 @@ public class PlayerMove : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space)){
             PlayerJump();
         }
+<<<<<<< HEAD
 
+=======
+        if(m_transform.position.y - startJumpY>=limitDetalY){
+            //m_transform.position = new Vector3(m_transform.position.x, startJumpY + limitDetalY, m_transform.position.z) ;
+            isJump = true;
+        }else {
+            isJump = false;
+        }
+>>>>>>> 224a66dda3027d2e85a19a713760609e928a592c
     }
     // 碰撞开始
     private bool isJump = false;
@@ -78,7 +98,11 @@ public class PlayerMove : MonoBehaviour {
         //startJumpY = m_transform.position.y;
         if(!isJump){
             M_rigidbody.AddForce(Vector3.up*jumpSpeed);
+<<<<<<< HEAD
             isJump = true;
+=======
+            //isJump = true;
+>>>>>>> 224a66dda3027d2e85a19a713760609e928a592c
         }
         //Debug.Log("PlayerJump*******"+(Vector3.up*jumpSpeed));
     }
@@ -94,6 +118,7 @@ public class PlayerMove : MonoBehaviour {
         transform.rotation = newRotation;
      
     }
+<<<<<<< HEAD
 
     private void ControllMove(){
         vertical = 0;
@@ -126,4 +151,6 @@ public class PlayerMove : MonoBehaviour {
             isMoving = false;
         }
     }
+=======
+>>>>>>> 224a66dda3027d2e85a19a713760609e928a592c
 }
