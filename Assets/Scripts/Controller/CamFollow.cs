@@ -14,8 +14,10 @@ public class CamFollow : MonoBehaviour
         if (player == null)
         {
             player = GameObject.Find("Player");
-        }
 
+        }
+        fordistan = player.transform.position.z - transform.position.z;
+        updistan = transform.position.y - player.transform.position.y;
     }
 
     // 引用Letmego方法
