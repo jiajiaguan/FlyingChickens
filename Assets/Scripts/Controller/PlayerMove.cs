@@ -50,17 +50,19 @@ public class PlayerMove : MonoBehaviour {
             if (isMoving && (vertical != 0 || horizonta != 0))
             {
                 //Rotation(v, h);
-                //anim.SetBool("stand_walk", true);
-                //anim.SetBool("walk_stand", false);
-                //anim.SetBool("Move", true);
+                anim.Play("run_b");
+                // anim.SetBool("run_b", true);
+                // anim.SetBool("standby", false);
+                // anim.SetBool("jump", false);
                 //transform.Translate(Vector3.forward * move_speed * Time.deltaTime);
                 M_rigidbody.MovePosition(m_transform.position + new Vector3(horizonta, 0, vertical) * speed * Time.deltaTime);
                 //this.transform.
                 transform.LookAt(new Vector3(m_transform.position.x + horizonta, m_transform.position.y, m_transform.position.z + vertical));
             }
-            else
+            else if(!isJump)
             {
-                //anim.SetBool("Move", false);
+                // anim.SetBool("run_b", false);
+                anim.Play("standby");
             }
             if(Input.GetKeyDown(KeyCode.Space)){
                 PlayerJump();
@@ -118,6 +120,8 @@ public class PlayerMove : MonoBehaviour {
         //startJumpY = m_transform.position.y;
         if(!isJump){
             M_rigidbody.AddForce(Vector3.up*jumpSpeed);
+            // anim.SetBool("jump", true);
+            anim.Play("jump");
             isJump = true;
         }
         //Debug.Log("PlayerJump*******"+(Vector3.up*jumpSpeed));
