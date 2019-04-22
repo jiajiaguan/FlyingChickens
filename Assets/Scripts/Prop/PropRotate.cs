@@ -7,13 +7,13 @@ using DG.Tweening;
 public class PropRotate : MonoBehaviour {
     [SerializeField]
     private float time=1;
-    [SerializeField]
-    private float m_Range = 300;
+    [SerializeField,Range(1,89)]
+    private float m_Range = 45;
 	// Use this for initialization
 	void Start () {
         //transform.DOLocalRotate(transform.up*300, 1).SetLoops(-1);
         transform.localEulerAngles = transform.right * -m_Range;
-        transform.DOLocalRotate(transform.right * m_Range, 1).SetLoops(-1,LoopType.Yoyo);
+        transform.DOLocalRotate(transform.right * m_Range, time).SetLoops(-1,LoopType.Yoyo);
 	}
 	
 	// Update is called once per frame

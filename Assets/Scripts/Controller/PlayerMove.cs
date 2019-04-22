@@ -3,7 +3,12 @@ using System.Collections;
 using System;
 
 public class PlayerMove : MonoBehaviour {
-
+enum PlayerState{
+    None,
+    Standy,
+    Move,
+    Jump
+}
     public float speed = 1f;
     private Animator anim;
     private int groundLayerIndex = -1;
@@ -24,6 +29,8 @@ public class PlayerMove : MonoBehaviour {
 
     //DataConfig
     public float curHealth = 3;
+
+    private PlayerState _curPlayerState = PlayerState.None;
     // Use this for initialization
     void Start () {
         anim = this.GetComponentInChildren<Animator>();
@@ -50,7 +57,8 @@ public class PlayerMove : MonoBehaviour {
             if (isMoving && (vertical != 0 || horizonta != 0))
             {
                 //Rotation(v, h);
-                anim.Play("run_b");
+                _curPlayerState = PlayerState.Move;
+                
                 // anim.SetBool("run_b", true);
                 // anim.SetBool("standby", false);
                 // anim.SetBool("jump", false);
@@ -62,12 +70,13 @@ public class PlayerMove : MonoBehaviour {
             else if(!isJump)
             {
                 // anim.SetBool("run_b", false);
-                anim.Play("standby");
+                _curPlayerState = PlayerState.Standy;
+                // anim.Play("standby");
             }
             if(Input.GetKeyDown(KeyCode.Space)){
                 PlayerJump();
             }
-            
+            UpdatePlayerState();
             //if(m_transform.position.y - startJumpY>=limitDetalY){
             //    //m_transform.position = new Vector3(m_transform.position.x, startJumpY + limitDetalY, m_transform.position.z) ;
             //    isJump = true;
@@ -93,9 +102,11 @@ public class PlayerMove : MonoBehaviour {
     private bool isJump = false;
     void OnCollisionEnter(Collision collision)
     {
+        Debug.LogError("collision.gameObject.layer"+collision.gameObject.layer+"LayerMask.NameToLayer: "+LayerMask.NameToLayer("Floor"));
         if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))//碰撞的是Plane  
         {
             isJump = false;
+            Debug.Log("jump is false");
         }
     }
     //开始游戏
@@ -119,10 +130,12 @@ public class PlayerMove : MonoBehaviour {
     public void PlayerJump(){
         //startJumpY = m_transform.position.y;
         if(!isJump){
-            M_rigidbody.AddForce(Vector3.up*jumpSpeed);
+            // M_rigidbody.AddForce(Vector3.up*jumpSpeed);
             // anim.SetBool("jump", true);
             anim.Play("jump");
+            Debug.LogError("jump*****");
             isJump = true;
+             _curPlayerState = PlayerState.Jump;
         }
         //Debug.Log("PlayerJump*******"+(Vector3.up*jumpSpeed));
     }
@@ -175,5 +188,15 @@ public class PlayerMove : MonoBehaviour {
         }
     }
 
-
+    private void UpdatePlayerState(){
+        var ani = anim.GetCurrentAnimatorStateInfo(0);
+        isJump = ani.IsName("jump");
+        if(_curPlayerState == PlayerState.Move){
+            // string aniName = anim.GetCurrentAnimatorClipInfo(0);
+            if(!ani.IsName("jump") ){
+                anim.Play("run_b");
+            }
+        }
+        
+    }
 }
