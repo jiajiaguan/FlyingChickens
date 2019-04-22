@@ -318,6 +318,10 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9f0779b4ed940974197c333721741a45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f0779b4ed940974197c333721741a45, type: 3}
   m_IsPrefabAsset: 0
@@ -1047,6 +1051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 279219894}
   - component: {fileID: 279219893}
+  - component: {fileID: 279219895}
   m_Layer: 0
   m_Name: GameScenceManger
   m_TagString: Untagged
@@ -1086,6 +1091,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &279219895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279219892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee0808a14274453990909c34b885f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorA: {fileID: 1740761343}
+  floorB: {fileID: 249590332}
 --- !u!1001 &298133206
 Prefab:
   m_ObjectHideFlags: 0
