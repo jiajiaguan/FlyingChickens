@@ -52,6 +52,9 @@ ModelImporter:
     100092: Bone_tail03
     100094: Bone_tail04
     100096: //RootNode
+    100098: Bone005
+    100100: Bone011
+    100102: Star001
     400000: Bip001
     400002: Bip001 Head
     400004: Bip001 L Calf
@@ -101,6 +104,9 @@ ModelImporter:
     400092: Bone_tail03
     400094: Bone_tail04
     400096: //RootNode
+    400098: Bone005
+    400100: Bone011
+    400102: Star001
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
