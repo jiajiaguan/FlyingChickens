@@ -130,7 +130,7 @@ enum PlayerState{
     public void PlayerJump(){
         //startJumpY = m_transform.position.y;
         if(!isJump){
-            // M_rigidbody.AddForce(Vector3.up*jumpSpeed);
+            M_rigidbody.AddForce(Vector3.up*jumpSpeed);
             // anim.SetBool("jump", true);
             anim.Play("jump");
             Debug.LogError("jump*****");
