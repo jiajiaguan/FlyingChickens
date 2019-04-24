@@ -142,7 +142,15 @@ enum PlayerState{
 
     public void IsStartMove(bool isStart){
         isMoving = isStart;
+        if(!isStart && _curPlayerState != PlayerState.Jump){
+            // anim.stop
+            // anim.GetCurrentAnimatorClipInfo(0).sto
+            _curPlayerState = PlayerState.Standy;
+            // Debug.LogError("standby****");
+            anim.Play("standby");
+        }
     }
+    
     private void Rotation(float vertical, float horizontal)
     {
         Vector3 targeDirection = new Vector3(horizontal, 0f, vertical);
@@ -185,6 +193,11 @@ enum PlayerState{
         }
         if(Input.GetKeyUp(KeyCode.W)|| Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.S)|| Input.GetKeyUp(KeyCode.D)){
             isMoving = false;
+            if(_curPlayerState != PlayerState.Jump){
+                 _curPlayerState = PlayerState.Standy;
+                anim.Play("standby");
+            }
+
         }
     }
 
