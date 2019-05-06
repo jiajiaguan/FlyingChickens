@@ -1,0 +1,285 @@
+fileFormatVersion: 2
+guid: 443c2cd18d0347a4eb518277a524806b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bob
+    100002: chicken
+    100004: colud_001
+    100006: colud_002
+    100008: colud__1_
+    100010: //RootNode
+    100012: floor_01
+    100014: floor_05
+    100016: floor_06
+    100018: floor_07
+    100020: floor_08
+    100022: floor_09
+    100024: floor_10
+    100026: floor_11
+    100028: floor_12
+    100030: floor_13
+    100032: floor_14
+    100034: floor_15
+    100036: floor_16
+    100038: floor_17
+    100040: floor_18
+    100042: floor_19
+    100044: floor_21
+    100046: floor_23
+    100048: floor_24
+    100050: gear_01
+    100052: gear_0100
+    100054: gear_02
+    100056: hill_001
+    100058: hill_002
+    100060: magic
+    100062: pillars_02
+    100064: sky
+    100066: Sphere002
+    100068: trees
+    100070: warp
+    100072: "\u5BF9\u8C61005"
+    100074: "\u5BF9\u8C61008"
+    100076: "\u5BF9\u8C61009"
+    400000: bob
+    400002: chicken
+    400004: colud_001
+    400006: colud_002
+    400008: colud__1_
+    400010: //RootNode
+    400012: floor_01
+    400014: floor_05
+    400016: floor_06
+    400018: floor_07
+    400020: floor_08
+    400022: floor_09
+    400024: floor_10
+    400026: floor_11
+    400028: floor_12
+    400030: floor_13
+    400032: floor_14
+    400034: floor_15
+    400036: floor_16
+    400038: floor_17
+    400040: floor_18
+    400042: floor_19
+    400044: floor_21
+    400046: floor_23
+    400048: floor_24
+    400050: gear_01
+    400052: gear_0100
+    400054: gear_02
+    400056: hill_001
+    400058: hill_002
+    400060: magic
+    400062: pillars_02
+    400064: sky
+    400066: Sphere002
+    400068: trees
+    400070: warp
+    400072: "\u5BF9\u8C61005"
+    400074: "\u5BF9\u8C61008"
+    400076: "\u5BF9\u8C61009"
+    2100000: _flyingchickens_objdefault
+    2100002: 'Material #63'
+    2100004: 'Material #64'
+    2100006: 'Material #89'
+    2100008: 'Material #88'
+    2100010: 'Material #110'
+    2100012: 'Material #113'
+    2100014: 'Material #111'
+    2100016: 'Material #115'
+    2300000: bob
+    2300002: chicken
+    2300004: colud_001
+    2300006: colud_002
+    2300008: floor_01
+    2300010: floor_05
+    2300012: floor_06
+    2300014: floor_07
+    2300016: floor_08
+    2300018: floor_09
+    2300020: floor_10
+    2300022: floor_11
+    2300024: floor_12
+    2300026: floor_13
+    2300028: floor_14
+    2300030: floor_15
+    2300032: floor_16
+    2300034: floor_17
+    2300036: floor_18
+    2300038: floor_19
+    2300040: floor_21
+    2300042: floor_23
+    2300044: floor_24
+    2300046: gear_01
+    2300048: gear_0100
+    2300050: gear_02
+    2300052: hill_001
+    2300054: hill_002
+    2300056: magic
+    2300058: pillars_02
+    2300060: sky
+    2300062: Sphere002
+    2300064: trees
+    2300066: warp
+    2300068: "\u5BF9\u8C61005"
+    2300070: "\u5BF9\u8C61008"
+    2300072: "\u5BF9\u8C61009"
+    3300000: bob
+    3300002: chicken
+    3300004: colud_001
+    3300006: colud_002
+    3300008: floor_01
+    3300010: floor_05
+    3300012: floor_06
+    3300014: floor_07
+    3300016: floor_08
+    3300018: floor_09
+    3300020: floor_10
+    3300022: floor_11
+    3300024: floor_12
+    3300026: floor_13
+    3300028: floor_14
+    3300030: floor_15
+    3300032: floor_16
+    3300034: floor_17
+    3300036: floor_18
+    3300038: floor_19
+    3300040: floor_21
+    3300042: floor_23
+    3300044: floor_24
+    3300046: gear_01
+    3300048: gear_0100
+    3300050: gear_02
+    3300052: hill_001
+    3300054: hill_002
+    3300056: magic
+    3300058: pillars_02
+    3300060: sky
+    3300062: Sphere002
+    3300064: trees
+    3300066: warp
+    3300068: "\u5BF9\u8C61005"
+    3300070: "\u5BF9\u8C61008"
+    3300072: "\u5BF9\u8C61009"
+    4300000: floor_01
+    4300002: floor_15
+    4300004: magic
+    4300006: chicken
+    4300008: Sphere002
+    4300010: floor_18
+    4300012: floor_17
+    4300014: floor_16
+    4300016: floor_23
+    4300018: floor_24
+    4300020: floor_14
+    4300022: floor_13
+    4300024: gear_0100
+    4300026: pillars_02
+    4300028: warp
+    4300030: floor_12
+    4300032: "\u5BF9\u8C61005"
+    4300034: gear_01
+    4300036: "\u5BF9\u8C61008"
+    4300038: floor_19
+    4300040: floor_21
+    4300042: floor_05
+    4300044: floor_06
+    4300046: floor_07
+    4300048: floor_08
+    4300050: floor_09
+    4300052: floor_10
+    4300054: floor_11
+    4300056: "\u5BF9\u8C61009"
+    4300058: gear_02
+    4300060: bob
+    4300062: sky
+    4300064: colud_002
+    4300066: colud_001
+    4300068: hill_001
+    4300070: hill_002
+    4300072: trees
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
