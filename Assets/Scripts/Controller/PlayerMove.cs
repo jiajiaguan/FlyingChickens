@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Net.Mime;
+using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour {
 enum PlayerState{
@@ -9,6 +11,8 @@ enum PlayerState{
     Move,
     Jump
 }
+    [SerializeField]
+    private Text m_hearthText;
     public float speed = 1f;
     private Animator anim;
     private int groundLayerIndex = -1;
@@ -28,8 +32,16 @@ enum PlayerState{
     public System.Action<GameController.GameState> OnChangeGameState;
 
     //DataConfig
-    public float curHealth = 3;
-
+    public float curHealth{
+        set{
+            _curHealth = value;
+            m_hearthText.text = value.ToString();
+        }
+        get{
+            return _curHealth;
+        }
+    }
+    private float _curHealth = 3;
     private PlayerState _curPlayerState = PlayerState.None;
     // Use this for initialization
     void Start () {
@@ -89,13 +101,16 @@ enum PlayerState{
         if(transform.localPosition.y < -1){
             Debug.LogError("Game Over");
             isPlaying = false;
+            vertical = 0 ;
+            horizonta = 0;
+            M_rigidbody.useGravity = false;
             if (OnChangeGameState != null){
                 if (curHealth > 0)
-                    OnChangeGameState(GameController.GameState.GameOver);
-                else
                     OnChangeGameState(GameController.GameState.Fall);
+                else
+                    OnChangeGameState(GameController.GameState.GameOver);
             }
-            M_rigidbody.useGravity = false;
+            // M_rigidbody.useGravity = false;
         }
     }
     // 碰撞开始
@@ -211,5 +226,9 @@ enum PlayerState{
             }
         }
         
+    }
+
+    public void InitPlayerInitData(){
+        curHealth = 3;
     }
 }

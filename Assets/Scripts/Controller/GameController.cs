@@ -10,7 +10,9 @@ public class GameController : MonoBehaviour
     private GameObject startObj;
     [SerializeField]
     private Transform m_BornAt;
+    [SerializeField]private Transform m_BornAtParent;
     public PlayerMove player;
+    private float prePositonZ;
     public enum GameState{
         None,
         Init,
@@ -31,6 +33,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        prePositonZ = m_BornAtParent.GetChild(0).position.z;
         m_GameState = GameState.Init;
         GameData.Instance.InitData();//数据初始化
     }
@@ -51,16 +54,43 @@ public class GameController : MonoBehaviour
     {
            m_GameState = state;
         if(state == GameState.GameOver){
+            InitGameData();
+            player.InitPlayerInitData();
             startObj.SetActive(true);
             m_GameState = GameState.Start;
+        }else if(state == GameState.Fall){
+            prePositonZ = player.transform.position.z;
+            m_GameState = GameState.Play;
+            player.StartNewGame(GetBornAtPos());
         }
+        Debug.LogError("prePositonZ: " +prePositonZ);
     }
 
 
     public void StartPlay(){
         startObj.SetActive(false);
         m_GameState = GameState.Play;
-        player.StartNewGame(m_BornAt.transform.position);
+        player.StartNewGame(GetBornAtPos());
+    }
+
+    private Vector3 GetBornAtPos(){
+        var _count = m_BornAtParent.childCount;
+        // bool isFind = false;
+        Debug.LogError("_count: "+ _count);
+        for(int i = _count-1 ;i >= 0 ;i--){
+            Debug.LogError("m_BornAtParent.GetChild(i).position.z: "+m_BornAtParent.GetChild(i).position.z);
+            if(prePositonZ >= m_BornAtParent.GetChild(i).position.z){
+                Debug.LogError("*************"+i);
+                return m_BornAtParent.GetChild(i).position;
+            }
+        }
+        return m_BornAtParent.GetChild(_count-1).position;
+    }
+
+    private void InitGameData(){
+        prePositonZ = m_BornAtParent.GetChild(0).position.z;
+        m_GameState = GameState.Init;
+        GameData.Instance.InitData();//数据初始化
     }
 }
 
