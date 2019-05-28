@@ -7,15 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: hill_tree
-  m_Shader: {fileID: 4800000, guid: 3705448de9214215b29204d537635a9e, type: 3}
+  m_Shader: {fileID: 52, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHATEST_ON _DECAL_OFF _DISCOLOR_OFF _NORMALMAP _REFLECTION_ON
     _SPECULAR_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: TransparentCutout
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
