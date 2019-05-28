@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.6534799, g: 0.7294784, b: 0.8396226, a: 1}
+  m_FogColor: {r: 0.48967603, g: 0.64686614, b: 0.7924528, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.012
+  m_FogDensity: 0.016
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
@@ -2334,6 +2334,18 @@ Prefab:
       propertyPath: m_hearthText
       value: 
       objectReference: {fileID: 2101750723}
+    - target: {fileID: 4232804769382786, guid: a7fb07b0b39be4d43aedd9deaacd6c06, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232804769382786, guid: a7fb07b0b39be4d43aedd9deaacd6c06, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232804769382786, guid: a7fb07b0b39be4d43aedd9deaacd6c06, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7fb07b0b39be4d43aedd9deaacd6c06, type: 2}
   m_IsPrefabAsset: 0
@@ -5765,7 +5777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00009141022, y: -0.000035459405}
+  m_AnchoredPosition: {x: -0.000041573923, y: 0.000010153845}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412986620
@@ -7370,7 +7382,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 009007b9721c7074384a3e688d4361a1, type: 2}
+  - {fileID: 2100000, guid: bf86dae6c12b93840881497e19621023, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
