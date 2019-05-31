@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: peach_01
+  m_Name: rock_002
   m_Shader: {fileID: 31, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHABLEND_ON _DECAL_OFF _DISCOLOR_OFF
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _ALPHABLEND_ON _DECAL_OFF _DISCOLOR_OFF _REFLECTION_ON _SPECULAR_ON
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -54,8 +54,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Illum:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: fb34b54bc7cb119489791d9bd647d99b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 175feae984531ad41a20fd948ea4dd2a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -78,6 +82,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ToonCube:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _detailmap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0}
+    - _diffiuse:
+        m_Texture: {fileID: 2800000, guid: 47250462b538ce44eb39cf499fcf73c8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _lightmap:
+        m_Texture: {fileID: 2800000, guid: 5f9bd06a182e66744b51a01268a4124d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BottomLayer: 0
     - _BumpScale: 1
@@ -89,9 +109,11 @@ Material:
     - _DecalTex3UV2: 0
     - _DetailNormalMapScale: 1
     - _Discolor: 0
+    - _Dist: 3
     - _DstBlend: 10
+    - _Emission: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _Hue: 0
     - _LightAdd: 0.5
@@ -105,25 +127,31 @@ Material:
     - _Normalmap: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Reflection: 0
+    - _Reflection: 1
     - _RimPower: 2
     - _RimWrap: 0
     - _SaturAdd: 0.05
     - _SaturMin: 0.1
     - _SaturRatio: 2
     - _Saturation: 0
-    - _Shininess: 0.078125
+    - _Shininess: 0.01
     - _SmoothnessTextureChannel: 0
-    - _Specular: 0
+    - _Specular: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 5
+    - _Toonmap: 0
     - _UVSec: 0
     - _WrapPower: 0.5
     - _ZWrite: 0
+    - _detailintensity: 0
+    - _lightmapintensity: 0.9
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HueColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
+    - _Color: {r: 1, g: 0.88628703, b: 0.7877358, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _HueColor: {r: 1, g: 1, b: 1, a: 0}
+    - _QOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ReflectColor: {r: 0.066353366, g: 0.1509434, b: 0.050551802, a: 0.5}
     - _RimColor: {r: 0.392, g: 0.392, b: 0.588, a: 0}
-    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
+    - _darkcolor: {r: 0, g: 0, b: 0, a: 1}
+    - _lightcolor: {r: 1, g: 1, b: 1, a: 1}
