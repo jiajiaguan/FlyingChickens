@@ -130,6 +130,7 @@ enum PlayerState{
         curHealth--;
         gameObject.SetActive(false);
         transform.position = bornPos;
+        transform.localEulerAngles = Vector3.zero;
         gameObject.SetActive(true);
         M_rigidbody.useGravity = true;
     }
