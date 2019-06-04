@@ -4,13 +4,23 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: warp_01
+    100004: warp_02
     400000: //RootNode
+    400002: warp_01
+    400004: warp_02
     2100000: default
     2100002: _lazhuren_obj(1)default
     2100004: 'Material #89'
     2300000: //RootNode
+    2300002: warp_01
+    2300004: warp_02
     3300000: //RootNode
+    3300002: warp_01
+    3300004: warp_02
     4300000: warp
+    4300002: warp_02
+    4300004: warp_01
   externalObjects: {}
   materials:
     importMaterials: 1
