@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
     //public delegate void OnPlayerMove(float horizonta,float ververtical);
 public class GameController : MonoBehaviour
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private Transform m_BornAt;
     [SerializeField]private Transform m_BornAtParent;
+    [SerializeField] private Text m_TimeText;
     public PlayerMove player;
     private float prePositonZ;
     public enum GameState{
@@ -43,6 +45,7 @@ public class GameController : MonoBehaviour
         m_scrollCircle.OnPlayerMoveAction = player.playerMove;
         m_scrollCircle.OnIsStartMoveAction = player.IsStartMove;
         player.OnChangeGameState = OnChangeGameState;
+       
     }
 
     // Update is called once per frame
@@ -71,6 +74,7 @@ public class GameController : MonoBehaviour
         startObj.SetActive(false);
         m_GameState = GameState.Play;
         player.StartNewGame(GetBornAtPos());
+        StartCoroutine(Timing());
     }
 
     private Vector3 GetBornAtPos(){
@@ -91,6 +95,16 @@ public class GameController : MonoBehaviour
         prePositonZ = m_BornAtParent.GetChild(0).position.z;
         m_GameState = GameState.Init;
         GameData.Instance.InitData();//数据初始化
+    }
+    private float time = 0;
+    IEnumerator Timing() {
+        while(m_GameState == GameState.Play) {
+            yield return new WaitForSeconds(1);
+            Timing();
+            time++;
+            m_TimeText.text = string.Format("时间：{0}",time);
+
+        }      
     }
 }
 
