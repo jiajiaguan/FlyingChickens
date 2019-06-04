@@ -15,6 +15,7 @@ using System.Collections;
 	public float speed = 10;
 	public AroundAxis axis = AroundAxis.Y;
 	public Space relativeTo = Space.World;
+    //public float 
     private Rigidbody rigidbody;
     private void Start()
     {
@@ -40,6 +41,7 @@ using System.Collections;
             }
 
             var deltaRotation = Quaternion.Euler(eulerAngles * Time.deltaTime*speed);
+            deltaRotation.w = -deltaRotation.w;
             rigidbody.MoveRotation(rigidbody.rotation * deltaRotation);
 			//transform.Rotate (eulerAngles, relativeTo);
 		}
