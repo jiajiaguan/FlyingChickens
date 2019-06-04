@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6c1c0f2509f9f244db43fd49cdc9af5f
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _RefractTex: {fileID: 2800000, guid: 6ff1c1677c9fbce4e92c2ad926e192ab, type: 3}
+  - _BumpTex: {fileID: 2800000, guid: b06c2fcab8f86854081feff2adc38db9, type: 3}
+  - _FresnelTex: {fileID: 2800000, guid: 281f9087c05c42c45af386ac91034204, type: 3}
+  - _Skybox: {fileID: 8900000, guid: 3a842e26308daae4496d88f044e63641, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
