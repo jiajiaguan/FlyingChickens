@@ -12625,7 +12625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &629032493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13013,6 +13013,10 @@ Prefab:
     - target: {fileID: 4131330715477672, guid: cd51f92bcd00d4842ac245e6319af8ca, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727534970425644, guid: cd51f92bcd00d4842ac245e6319af8ca, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd51f92bcd00d4842ac245e6319af8ca, type: 2}
@@ -18250,6 +18254,10 @@ Prefab:
     - target: {fileID: 4900129511476306, guid: fa5341209a04ddf49991c8587e975f97, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0.0292
+      objectReference: {fileID: 0}
+    - target: {fileID: 1823388925315406, guid: fa5341209a04ddf49991c8587e975f97, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa5341209a04ddf49991c8587e975f97, type: 2}
@@ -38484,6 +38492,10 @@ Prefab:
       propertyPath: m_Name
       value: tornado
       objectReference: {fileID: 0}
+    - target: {fileID: 1492993009620234, guid: 720d0f0f740b62e4dbd548d631fb7e88, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 720d0f0f740b62e4dbd548d631fb7e88, type: 2}
   m_IsPrefabAsset: 0
@@ -38865,7 +38877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000065925046, y: -0.000030648407}
+  m_AnchoredPosition: {x: 0.000016910062, y: -0.000030648407}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412986620
@@ -49114,6 +49126,10 @@ Prefab:
     - target: {fileID: 4251576630559890, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
       propertyPath: m_RootOrder
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816250350033022, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
