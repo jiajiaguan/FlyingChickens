@@ -81,7 +81,8 @@ public class GameController : MonoBehaviour
         var _count = m_BornAtParent.childCount;
         // bool isFind = false;
         Debug.LogError("_count: "+ _count);
-        for(int i = _count-1 ;i >= 0 ;i--){
+        return m_BornAtParent.GetChild(4).position;
+        for (int i = _count-1 ;i >= 0 ;i--){
             Debug.LogError("m_BornAtParent.GetChild(i).position.z: "+m_BornAtParent.GetChild(i).position.z);
             if(prePositonZ >= m_BornAtParent.GetChild(i).position.z){
                 Debug.LogError("*************"+i);
@@ -95,6 +96,8 @@ public class GameController : MonoBehaviour
         prePositonZ = m_BornAtParent.GetChild(0).position.z;
         m_GameState = GameState.Init;
         GameData.Instance.InitData();//数据初始化
+        time = 0;
+        m_TimeText.text = string.Format("时间：{0}", time);
     }
     private float time = 0;
     IEnumerator Timing() {
