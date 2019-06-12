@@ -19,7 +19,7 @@ RenderSettings:
   m_FogMode: 3
   m_FogDensity: 0.016
   m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogEnd: 298.62
   m_AmbientSkyColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_AmbientEquatorColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_AmbientGroundColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
@@ -406,7 +406,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0073711397
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalPosition.y
@@ -414,23 +414,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.019274712
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.6532815
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.27059805
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.27059805
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.6532815
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_RootOrder
@@ -442,20 +442,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalScale.x
-      value: 195.083
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalScale.y
-      value: 195.0831
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_LocalScale.z
-      value: 195.0831
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: a917f85bf71685a41aa0861416133765, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bf99ee76ff1845446bc1ebcd7d0c84a2, type: 2}
+    - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a917f85bf71685a41aa0861416133765, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a917f85bf71685a41aa0861416133765, type: 3}
   m_IsPrefabAsset: 0
@@ -1400,7 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249925639}
   m_Layer: 0
-  m_Name: BornAt_06 (1)
+  m_Name: BornAt_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23357,7 +23365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 994422665}
   m_Layer: 0
-  m_Name: BornAt_07
+  m_Name: BornAt_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38469,7 +38477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1262260070}
   m_Layer: 0
-  m_Name: BornAt_06
+  m_Name: BornAt_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38800,7 +38808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1347534273}
   m_Layer: 0
-  m_Name: BornAt_05
+  m_Name: BornAt_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38927,7 +38935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030593812, y: 0.00001068062}
+  m_AnchoredPosition: {x: -0.000007311844, y: -0.00003502174}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412986620
@@ -49187,15 +49195,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4251576630559890, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.7
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 4251576630559890, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.14
+      value: 7.39
       objectReference: {fileID: 0}
     - target: {fileID: 4251576630559890, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -54.71
+      value: 69.07
       objectReference: {fileID: 0}
     - target: {fileID: 4251576630559890, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
       propertyPath: m_LocalRotation.x
@@ -49220,6 +49228,18 @@ Prefab:
     - target: {fileID: 1816250350033022, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251576630559890, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251576630559890, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251576630559890, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb9ea3fd7882924f85da8634b0f7014, type: 2}
@@ -59139,7 +59159,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1727574671}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee824e0d8b8a4bcfb9d65dd13863276, type: 3}
   m_Name: 
