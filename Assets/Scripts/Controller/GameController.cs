@@ -80,8 +80,7 @@ public class GameController : MonoBehaviour
     private Vector3 GetBornAtPos(){
         var _count = m_BornAtParent.childCount;
         // bool isFind = false;
-        Debug.LogError("_count: "+ _count);
-        return m_BornAtParent.GetChild(4).position;
+        //return m_BornAtParent.GetChild(4).position;
         for (int i = _count-1 ;i >= 0 ;i--){
             Debug.LogError("m_BornAtParent.GetChild(i).position.z: "+m_BornAtParent.GetChild(i).position.z);
             if(prePositonZ >= m_BornAtParent.GetChild(i).position.z){
