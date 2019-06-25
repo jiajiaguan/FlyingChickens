@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
     //public delegate void OnPlayerMove(float horizonta,float ververtical);
 public class GameController : MonoBehaviour
@@ -13,6 +14,7 @@ public class GameController : MonoBehaviour
     private Transform m_BornAt;
     [SerializeField]private Transform m_BornAtParent;
     [SerializeField] private Text m_TimeText;
+    [SerializeField] private GameObject m_prefab;
     public PlayerMove player;
     private float prePositonZ;
     public enum GameState{
@@ -65,6 +67,13 @@ public class GameController : MonoBehaviour
             prePositonZ = player.transform.position.z;
             m_GameState = GameState.Play;
             player.StartNewGame(GetBornAtPos());
+        }else if(state == GameState.Victory) {
+            Debug.LogError("victory**************8");
+            var _victory =(GameObject)Instantiate(m_prefab);
+            _victory.transform.SetParent(GameObject.Find("Canvas").transform);
+            //_victory.transform.localPosition = Vector3.zero;
+            //_victory.transform.localScale = Vector3.zero;
+            //_victory.transform.DOScale(Vector3.one,0.5f).SetEase(Ease.InQuad);
         }
         Debug.LogError("prePositonZ: " +prePositonZ);
     }

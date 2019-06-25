@@ -12,7 +12,7 @@ enum PlayerState{
     Jump
 }
     [SerializeField]
-    private Text m_hearthText;
+    private Transform m_hearthParent;
     public float speed = 1f;
     private Animator anim;
     private int groundLayerIndex = -1;
@@ -35,7 +35,13 @@ enum PlayerState{
     public float curHealth{
         set{
             _curHealth = value;
-            m_hearthText.text = value.ToString();
+            //m_hearthParent.text = value.ToString();
+            for(int i = 0; i < 3; i++) { 
+                if(i < _curHealth) {
+                    m_hearthParent.GetChild(i).gameObject.SetActive(true);
+                }else
+                    m_hearthParent.GetChild(i).gameObject.SetActive(false);
+            }
         }
         get{
             return _curHealth;
@@ -122,6 +128,12 @@ enum PlayerState{
         {
             isJump = false;
             Debug.Log("jump is false");
+        }
+        Debug.LogError(collision.gameObject.name);
+        if (string.Compare(collision.gameObject.name, "magic") == 1) {
+            Debug.LogError("***********");
+            OnChangeGameState(GameController.GameState.Victory);
+            M_rigidbody.useGravity = false;
         }
     }
     //开始游戏
