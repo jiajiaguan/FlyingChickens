@@ -69,11 +69,7 @@ public class GameController : MonoBehaviour
             player.StartNewGame(GetBornAtPos());
         }else if(state == GameState.Victory) {
             Debug.LogError("victory**************8");
-            var _victory =(GameObject)Instantiate(m_prefab);
-            _victory.transform.SetParent(GameObject.Find("Canvas").transform);
-            //_victory.transform.localPosition = Vector3.zero;
-            //_victory.transform.localScale = Vector3.zero;
-            //_victory.transform.DOScale(Vector3.one,0.5f).SetEase(Ease.InQuad);
+            StartCoroutine(PlayVictory());
         }
         Debug.LogError("prePositonZ: " +prePositonZ);
     }
@@ -89,11 +85,10 @@ public class GameController : MonoBehaviour
     private Vector3 GetBornAtPos(){
         var _count = m_BornAtParent.childCount;
         // bool isFind = false;
-        //return m_BornAtParent.GetChild(4).position;
+        //return m_BornAtParent.GetChild(8).position;
         for (int i = _count-1 ;i >= 0 ;i--){
             Debug.LogError("m_BornAtParent.GetChild(i).position.z: "+m_BornAtParent.GetChild(i).position.z);
             if(prePositonZ >= m_BornAtParent.GetChild(i).position.z){
-                Debug.LogError("*************"+i);
                 return m_BornAtParent.GetChild(i).position;
             }
         }
@@ -117,5 +112,30 @@ public class GameController : MonoBehaviour
 
         }      
     }
+
+    #region victory
+    IEnumerator PlayVictory() {
+        var _victory = (GameObject)Instantiate(m_prefab);
+        _victory.SetActive(false);
+        _victory.transform.SetParent(GameObject.Find("Canvas").transform);
+        _victory.transform.localPosition = Vector3.zero;
+        _victory.transform.localScale = Vector3.zero;
+        _victory.SetActive(true);
+        var _canvasGroup = _victory.GetComponent<CanvasGroup>();
+        _canvasGroup.alpha = 0;
+        _canvasGroup.DOFade(1, 0.5f).SetEase(Ease.OutQuad);
+        _victory.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutQuad);
+        //Debug.LogError("m_BornAtParent.GetChild(0).position: " + m_BornAtParent.GetChild(0).position);
+        yield return new WaitForSeconds(0.5f);
+        player.ResetStartPos(m_BornAtParent.GetChild(0).position);
+        yield return new WaitForSeconds(0.5f);
+
+        _canvasGroup.DOFade(0, 0.2f).SetEase(Ease.OutQuad);
+        yield return new WaitForSeconds(0.2f);
+        Destroy(_victory);
+        yield return player.PlayPlayerAni(m_BornAtParent.GetChild(4).position + new Vector3(0,10,0));
+
+    }
+    #endregion
 }
 
