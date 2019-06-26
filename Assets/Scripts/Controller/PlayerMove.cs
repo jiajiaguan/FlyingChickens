@@ -263,7 +263,7 @@ enum PlayerState{
         var _path = new Vector3[] {transform.position, endPos };
         Tweener tweener = transform.DOPath(_path, 10f);
         yield return new WaitForSeconds(10f);
-        tweener.Kill();
+        tweener.Pause();
         //transform.
         anim.Play("standby", 0, 0f);
     }
