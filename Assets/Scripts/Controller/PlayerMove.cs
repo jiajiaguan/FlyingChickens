@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerMove : MonoBehaviour {
 enum PlayerState{
@@ -123,17 +124,21 @@ enum PlayerState{
     private bool isJump = false;
     void OnCollisionEnter(Collision collision)
     {
-        Debug.LogError("collision.gameObject.layer"+collision.gameObject.layer+"LayerMask.NameToLayer: "+LayerMask.NameToLayer("Floor"));
+        if (!isPlaying)
+            return;
+        //Debug.LogError("collision.gameObject.layer"+collision.gameObject.layer+"LayerMask.NameToLayer: "+LayerMask.NameToLayer("Floor"));
         if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))//碰撞的是Plane  
         {
             isJump = false;
-            Debug.Log("jump is false");
+            //Debug.Log("jump is false");
         }
-        Debug.LogError(collision.gameObject.name);
-        if (string.Compare(collision.gameObject.name, "magic") == 1) {
-            Debug.LogError("***********");
+        //Debug.LogError(collision.gameObject.name);
+        if (collision.gameObject.name == "magic") {
+            isPlaying = false;
             OnChangeGameState(GameController.GameState.Victory);
             M_rigidbody.useGravity = false;
+            M_rigidbody.transform.localPosition = new Vector3(1,7,86.8f);
+            anim.Play("run_b");
         }
     }
     //开始游戏
@@ -169,12 +174,14 @@ enum PlayerState{
     }
 
     public void IsStartMove(bool isStart){
+        if (!isPlaying)
+            return;
         isMoving = isStart;
         if(!isStart && _curPlayerState != PlayerState.Jump){
             // anim.stop
             // anim.GetCurrentAnimatorClipInfo(0).sto
             _curPlayerState = PlayerState.Standy;
-            // Debug.LogError("standby****");
+             Debug.LogError("standby****");
             anim.Play("standby");
         }
     }
@@ -223,6 +230,8 @@ enum PlayerState{
             isMoving = false;
             if(_curPlayerState != PlayerState.Jump){
                  _curPlayerState = PlayerState.Standy;
+                Debug.LogError("standby****");
+
                 anim.Play("standby");
             }
 
@@ -244,4 +253,19 @@ enum PlayerState{
     public void InitPlayerInitData(){
         curHealth = 3;
     }
+
+    public void ResetStartPos(Vector3 bornPos)
+    {
+        transform.position = bornPos;
+        transform.localEulerAngles = Vector3.zero;
+    }
+    public IEnumerator PlayPlayerAni(Vector3 endPos) {       
+        var _path = new Vector3[] {transform.position, endPos };
+        Tweener tweener = transform.DOPath(_path, 10f);
+        yield return new WaitForSeconds(10f);
+        tweener.Kill();
+        //transform.
+        anim.Play("standby", 0, 0f);
+    }
+
 }
