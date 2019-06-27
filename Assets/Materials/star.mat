@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: star
-  m_Shader: {fileID: 11, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _DECAL_OFF _DISCOLOR_OFF _REFLECTION_ON _SPECULAR_ON
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _DECAL_OFF _DISCOLOR_OFF _EMISSION _REFLECTION_ON _SPECULAR_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -18,6 +18,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BottomTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -55,6 +59,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Illum:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -99,6 +107,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - PixelSnap: 0
     - _BottomLayer: 0
     - _BumpScale: 1
     - _ColorFactor: 1
@@ -112,6 +121,7 @@ Material:
     - _Dist: 3
     - _DstBlend: 0
     - _Emission: 1
+    - _EnableExternalAlpha: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -146,11 +156,13 @@ Material:
     - _detailintensity: 0
     - _lightmapintensity: 0.9
     m_Colors:
-    - _Color: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
+    - _Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HueColor: {r: 1, g: 1, b: 1, a: 0}
     - _QOffset: {r: 0, g: 0, b: 0, a: 0}
     - _ReflectColor: {r: 0.066353366, g: 0.1509434, b: 0.050551802, a: 0.5}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.392, g: 0.392, b: 0.588, a: 0}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
     - _darkcolor: {r: 0, g: 0, b: 0, a: 1}
