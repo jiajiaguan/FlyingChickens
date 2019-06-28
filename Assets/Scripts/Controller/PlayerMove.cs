@@ -261,7 +261,7 @@ enum PlayerState{
     }
     public IEnumerator PlayPlayerAni(Vector3 endPos) {       
         var _path = new Vector3[] {transform.position, endPos };
-        Tweener tweener = transform.DOPath(_path, 10f);
+        Tweener tweener = transform.DOPath(_path, 10f,PathType.CatmullRom);
         yield return new WaitForSeconds(10f);
         tweener.Pause();
         //transform.

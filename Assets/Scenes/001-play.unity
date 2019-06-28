@@ -1205,7 +1205,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 227610435}
-  m_LocalRotation: {x: 0.16571149, y: -0, z: -0, w: 0.9861743}
+  m_LocalRotation: {x: 0.16571027, y: 0, z: 0, w: 0.9861745}
   m_LocalPosition: {x: 1.58, y: 2.31, z: -63.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1609,6 +1609,7 @@ MonoBehaviour:
   m_BornAtParent: {fileID: 1948846862}
   m_TimeText: {fileID: 173191135}
   m_prefab: {fileID: 1194889238114862, guid: 412955435944f4f18a3a42ad24c58e4c, type: 2}
+  m_EndPos: {fileID: 610725941}
   player: {fileID: 1271312156}
   m_GameState: 0
 --- !u!4 &279219894
@@ -53174,7 +53175,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000035173405, y: -0.000033645258}
+  m_AnchoredPosition: {x: 0.00002928382, y: 0.000027279679}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412986620

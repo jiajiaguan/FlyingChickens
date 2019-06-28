@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField]private Transform m_BornAtParent;
     [SerializeField] private Text m_TimeText;
     [SerializeField] private GameObject m_prefab;
+    [SerializeField] private Transform m_EndPos;
     public PlayerMove player;
     private float prePositonZ;
     public enum GameState{
@@ -128,12 +129,12 @@ public class GameController : MonoBehaviour
         //Debug.LogError("m_BornAtParent.GetChild(0).position: " + m_BornAtParent.GetChild(0).position);
         yield return new WaitForSeconds(0.5f);
         player.ResetStartPos(m_BornAtParent.GetChild(0).position);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
         _canvasGroup.DOFade(0, 0.2f).SetEase(Ease.OutQuad);
         yield return new WaitForSeconds(0.2f);
         Destroy(_victory);
-        yield return player.PlayPlayerAni(m_BornAtParent.GetChild(4).position + new Vector3(0,10,0));
+        yield return player.PlayPlayerAni(m_EndPos.position);
 
     }
     #endregion
