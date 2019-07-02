@@ -32,15 +32,22 @@ void Update () {
 
       transform.Translate(Vector3.left * movespeed, Space.World); //向左移動
 
-if (transform.localPosition.x <= minPositionX)  
+    if (transform.localPosition.x <= minPositionX)  
 
       {  
 
           transform.localPosition = new Vector3(terPositionX+(transform.localPosition.x-minPositionX), transform.localPosition.y,transform.localPosition.z);  
 
-      }  
+      }
+        if (transform.localPosition.x >= terPositionX)
 
-}  
+        {
+
+            transform.localPosition = new Vector3(minPositionX - (transform.localPosition.x - minPositionX), transform.localPosition.y, transform.localPosition.z);
+
+        }
+    }  
+
     
 }
 

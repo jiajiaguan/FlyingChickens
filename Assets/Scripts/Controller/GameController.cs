@@ -16,6 +16,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private Text m_TimeText;
     [SerializeField] private GameObject m_prefab;
     [SerializeField] private Transform m_EndPos;
+    [SerializeField] private GameObject m_GameContentObj;
+    [SerializeField] private GameObject m_VictoryObj1;
+    [SerializeField] private GameObject m_GameUIObj;
+
     public PlayerMove player;
     private float prePositonZ;
     public enum GameState{
@@ -78,6 +82,9 @@ public class GameController : MonoBehaviour
 
     public void StartPlay(){
         startObj.SetActive(false);
+        m_GameUIObj.SetActive(true);
+        m_GameContentObj.SetActive(true);
+        m_VictoryObj1.SetActive(false);
         m_GameState = GameState.Play;
         player.StartNewGame(GetBornAtPos());
         StartCoroutine(Timing());
@@ -86,7 +93,7 @@ public class GameController : MonoBehaviour
     private Vector3 GetBornAtPos(){
         var _count = m_BornAtParent.childCount;
         // bool isFind = false;
-        //return m_BornAtParent.GetChild(8).position;
+        //return m_BornAtParent.GetChild(5).position;
         for (int i = _count-1 ;i >= 0 ;i--){
             Debug.LogError("m_BornAtParent.GetChild(i).position.z: "+m_BornAtParent.GetChild(i).position.z);
             if(prePositonZ >= m_BornAtParent.GetChild(i).position.z){
@@ -116,6 +123,10 @@ public class GameController : MonoBehaviour
 
     #region victory
     IEnumerator PlayVictory() {
+        //player.transform.DOLocalMoveY(1f,2);
+        //yield return new WaitForSeconds(2f);
+        m_GameUIObj.SetActive(false);
+        m_VictoryObj1.SetActive(true);
         var _victory = (GameObject)Instantiate(m_prefab);
         _victory.SetActive(false);
         _victory.transform.SetParent(GameObject.Find("Canvas").transform);
@@ -129,11 +140,14 @@ public class GameController : MonoBehaviour
         //Debug.LogError("m_BornAtParent.GetChild(0).position: " + m_BornAtParent.GetChild(0).position);
         yield return new WaitForSeconds(0.5f);
         player.ResetStartPos(m_BornAtParent.GetChild(0).position);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
 
         _canvasGroup.DOFade(0, 0.2f).SetEase(Ease.OutQuad);
         yield return new WaitForSeconds(0.2f);
         Destroy(_victory);
+        m_GameContentObj.SetActive(false);
+        yield return new WaitForSeconds(1f);
+       
         yield return player.PlayPlayerAni(m_EndPos.position);
 
     }

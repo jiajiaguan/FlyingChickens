@@ -137,7 +137,7 @@ enum PlayerState{
             isPlaying = false;
             OnChangeGameState(GameController.GameState.Victory);
             M_rigidbody.useGravity = false;
-            M_rigidbody.transform.localPosition = new Vector3(1,7,86.8f);
+            M_rigidbody.transform.localPosition = new Vector3(1,8,86.8f);
             anim.Play("run_b");
         }
     }
@@ -259,11 +259,21 @@ enum PlayerState{
         transform.position = bornPos;
         transform.localEulerAngles = Vector3.zero;
     }
-    public IEnumerator PlayPlayerAni(Vector3 endPos) {       
-        var _path = new Vector3[] {transform.position, endPos };
-        Tweener tweener = transform.DOPath(_path, 10f,PathType.CatmullRom);
-        yield return new WaitForSeconds(10f);
-        tweener.Pause();
+    public IEnumerator PlayPlayerAni(Vector3 endPos) {
+        isPlaying = false;
+        Destroy(M_rigidbody);
+        Vector3 detal = (endPos - transform.position)*Time.deltaTime;
+        //Camera.main.transform.SetParent(transform);
+        //Camera.main.transform.localPosition = new Vector3(0, 1.8f, -2.1f);
+        //var _path = new Vector3[] {transform.position, endPos };
+        //Tweener tweener = transform.DOPath(_path, 10f);
+        //yield return new WaitForSeconds(10f);
+        //tweener.Pause();
+        while (Vector3.Distance(transform.position, endPos) > 0.1f) {
+            //M_rigidbody.MovePosition(transform.position + endPos*0.001f);
+            transform.position = Vector3.MoveTowards(transform.position, endPos, Time.deltaTime*20);//Vector3.Lerp(transform.position,endPos,Time.deltaTime*0.5f);
+            yield return new WaitForEndOfFrame();
+        }
         //transform.
         anim.Play("standby", 0, 0f);
     }
