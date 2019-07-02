@@ -145,11 +145,11 @@ public class GameController : MonoBehaviour
         _canvasGroup.DOFade(0, 0.2f).SetEase(Ease.OutQuad);
         yield return new WaitForSeconds(0.2f);
         Destroy(_victory);
-        m_GameContentObj.SetActive(false);
+        //m_GameContentObj.SetActive(false);
         yield return new WaitForSeconds(1f);
        
         yield return player.PlayPlayerAni(m_EndPos.position);
-
+        m_GameContentObj.SetActive(false);
     }
     #endregion
 }
