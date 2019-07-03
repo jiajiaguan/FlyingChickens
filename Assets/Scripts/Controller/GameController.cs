@@ -52,7 +52,11 @@ public class GameController : MonoBehaviour
         m_scrollCircle.OnPlayerMoveAction = player.playerMove;
         m_scrollCircle.OnIsStartMoveAction = player.IsStartMove;
         player.OnChangeGameState = OnChangeGameState;
-       
+        //UnityEngine.QualityLevel.
+        Debug.LogError("QualitySettings.GetQualityLevel***********: "+ QualitySettings.GetQualityLevel());
+        QualitySettings.SetQualityLevel(4, true);
+        Debug.LogError("QualitySettings.GetQualityLevel￥￥￥￥￥￥￥￥: " + QualitySettings.GetQualityLevel());
+
     }
 
     // Update is called once per frame
