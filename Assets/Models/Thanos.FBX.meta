@@ -4,11 +4,21 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Thanos
+    100004: Thanos_02
     400000: //RootNode
+    400002: Thanos
+    400004: Thanos_02
     2100000: boss04
     2300000: //RootNode
+    2300002: Thanos
+    2300004: Thanos_02
     3300000: //RootNode
+    3300002: Thanos
+    3300004: Thanos_02
     4300000: boss04
+    4300002: Thanos
+    4300004: Thanos_02
   externalObjects: {}
   materials:
     importMaterials: 1
