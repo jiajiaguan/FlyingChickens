@@ -56,7 +56,8 @@ public class GameController : MonoBehaviour
         Debug.LogError("QualitySettings.GetQualityLevel***********: "+ QualitySettings.GetQualityLevel());
         QualitySettings.SetQualityLevel(4, true);
         Debug.LogError("QualitySettings.GetQualityLevel￥￥￥￥￥￥￥￥: " + QualitySettings.GetQualityLevel());
-
+        StartCoroutine(PlayMusicBG());
+        SoundController.instance.PlayFxSoundOverlap("Run",true);
     }
 
     // Update is called once per frame
@@ -68,6 +69,7 @@ public class GameController : MonoBehaviour
     {
            m_GameState = state;
         if(state == GameState.GameOver){
+            SoundController.instance.PlayFxSoundOverlap("Fall");
             InitGameData();
             player.InitPlayerInitData();
             startObj.SetActive(true);
@@ -75,9 +77,11 @@ public class GameController : MonoBehaviour
         }else if(state == GameState.Fall){
             prePositonZ = player.transform.position.z;
             m_GameState = GameState.Play;
+            SoundController.instance.PlayFxSoundOverlap("Fall_Retry");
             player.StartNewGame(GetBornAtPos());
         }else if(state == GameState.Victory) {
             Debug.LogError("victory**************8");
+            SoundController.instance.PlayFxSoundOverlap("BG_Victory02");
             StartCoroutine(PlayVictory());
         }
         Debug.LogError("prePositonZ: " +prePositonZ);
@@ -92,6 +96,8 @@ public class GameController : MonoBehaviour
         m_GameState = GameState.Play;
         player.StartNewGame(GetBornAtPos());
         StartCoroutine(Timing());
+        SoundController.instance.StopCurPlayingFx("Run");
+        SoundController.instance.PlayFxSoundOverlap("Start");
     }
 
     private Vector3 GetBornAtPos(){
@@ -143,6 +149,7 @@ public class GameController : MonoBehaviour
         _victory.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutQuad);
         //Debug.LogError("m_BornAtParent.GetChild(0).position: " + m_BornAtParent.GetChild(0).position);
         yield return new WaitForSeconds(0.5f);
+        SoundController.instance.PlayFxSoundOverlap("BG_VictorySwich",true);
         player.ResetStartPos(m_BornAtParent.GetChild(0).position);
         yield return new WaitForSeconds(5f);
 
@@ -152,9 +159,22 @@ public class GameController : MonoBehaviour
         //m_GameContentObj.SetActive(false);
         yield return new WaitForSeconds(1f);
        
-        yield return player.PlayPlayerAni(m_EndPos.position);
+        StartCoroutine(player.PlayPlayerAni(m_EndPos.position));
+        yield return new WaitForSeconds(5f);
         m_GameContentObj.SetActive(false);
     }
     #endregion
+
+    public IEnumerator PlayMusicBG() {
+        SoundController.instance.PlayMusicSound("BG_01");
+        while (m_GameState != GameState.Victory) {
+            yield return new WaitForSeconds(40f);
+            SoundController.instance.PlayMusicSound("BG_02");
+            yield return new WaitForSeconds(40f);
+            SoundController.instance.PlayMusicSound("BG_01");
+        }
+        yield return new WaitForSeconds(6f);
+        SoundController.instance.PlayMusicSound("BG_Victory");
+    }
 }
 

@@ -108,6 +108,7 @@ enum PlayerState{
         if(transform.localPosition.y < -1){
             Debug.LogError("Game Over");
             isPlaying = false;
+
             vertical = 0 ;
             horizonta = 0;
             M_rigidbody.useGravity = false;
@@ -139,6 +140,8 @@ enum PlayerState{
             M_rigidbody.useGravity = false;
             M_rigidbody.transform.localPosition = new Vector3(1,8,86.8f);
             anim.Play("run_b");
+            SoundController.instance.StopCurPlayingFx("Run");
+            SoundController.instance.PlayFxSoundOverlap("Final");
         }
     }
     //开始游戏
@@ -150,6 +153,7 @@ enum PlayerState{
         transform.localEulerAngles = Vector3.zero;
         gameObject.SetActive(true);
         M_rigidbody.useGravity = true;
+
     }
 
 
@@ -164,7 +168,9 @@ enum PlayerState{
         //startJumpY = m_transform.position.y;
         if(!isJump){
             M_rigidbody.AddForce(Vector3.up*jumpSpeed);
+
             // anim.SetBool("jump", true);
+            SoundController.instance.PlayFxSoundOverlap("Jump");
             anim.Play("jump");
             Debug.LogError("jump*****");
             isJump = true;
@@ -183,6 +189,15 @@ enum PlayerState{
             _curPlayerState = PlayerState.Standy;
              Debug.LogError("standby****");
             anim.Play("standby");
+        }
+        if (isStart && !SoundController.instance.IsFxPlaying("Run"))
+        {
+            Debug.LogError("run_b");
+            SoundController.instance.PlayFxSoundOverlap("Run",true);
+        }else if (!isStart) {
+            Debug.LogError("Stop*******");
+            SoundController.instance.StopCurPlayingFx("Run");
+
         }
     }
     
@@ -245,6 +260,7 @@ enum PlayerState{
             // string aniName = anim.GetCurrentAnimatorClipInfo(0);
             if(!ani.IsName("jump") ){
                 anim.Play("run_b");
+
             }
         }
         
@@ -265,15 +281,17 @@ enum PlayerState{
         Vector3 detal = (endPos - transform.position)*Time.deltaTime;
         //Camera.main.transform.SetParent(transform);
         //Camera.main.transform.localPosition = new Vector3(0, 1.8f, -2.1f);
-        //var _path = new Vector3[] {transform.position, endPos };
-        //Tweener tweener = transform.DOPath(_path, 10f);
-        //yield return new WaitForSeconds(10f);
-        //tweener.Pause();
-        while (Vector3.Distance(transform.position, endPos) > 0.1f) {
-            //M_rigidbody.MovePosition(transform.position + endPos*0.001f);
-            transform.position = Vector3.MoveTowards(transform.position, endPos, Time.deltaTime*20);//Vector3.Lerp(transform.position,endPos,Time.deltaTime*0.5f);
-            yield return new WaitForEndOfFrame();
-        }
+        var _path = new Vector3[] {transform.position, endPos };
+        Tweener tweener = transform.DOPath(_path, 10f);
+        yield return new WaitForSeconds(10f);
+        SoundController.instance.StopCurPlayingFx("BG_VictorySwich");
+        tweener.Pause();
+        SoundController.instance.PlayFxSoundOverlap("bossmusic");
+        //while (Vector3.Distance(transform.position, endPos) > 0.1f) {
+        //    //M_rigidbody.MovePosition(transform.position + endPos*0.001f);
+        //    transform.position = Vector3.MoveTowards(transform.position, endPos, Time.deltaTime*20);//Vector3.Lerp(transform.position,endPos,Time.deltaTime*0.5f);
+        //    yield return new WaitForEndOfFrame();
+        //}
         //transform.
         anim.Play("standby", 0, 0f);
     }

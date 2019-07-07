@@ -37,7 +37,7 @@ public class CameraLookAtPlayer : MonoBehaviour
             Vector3 targetCamPos = target.position + m_victoryCameraOff;
             //设置相机的位置,这里用到了Vector3.Lerp,是一个差值计算,使得移动更柔和.但是会略微消耗计算量
             //由于主摄像机只有1个,所以可以忽略这个计算量的消耗
-            transform.position = targetCamPos;//Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime*2);
+            transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime*2);
         }
     }
    
